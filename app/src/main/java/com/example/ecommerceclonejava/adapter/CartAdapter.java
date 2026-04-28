@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,19 +17,15 @@ import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
-    public interface OnCartChangeListener {
-        void onCartChanged();
-    }
-
     Context context;
     List<CartItem> list;
     PrefManager pref;
-    OnCartChangeListener listener;
+    Runnable updateTotal;
 
-    public CartAdapter(Context context, List<CartItem> list, OnCartChangeListener listener) {
+    public CartAdapter(Context context, List<CartItem> list, Runnable updateTotal) {
         this.context = context;
         this.list = list;
-        this.listener = listener;
+        this.updateTotal = updateTotal;
         pref = new PrefManager(context);
     }
 
@@ -47,14 +42,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
         h.name.setText(item.name);
         h.price.setText("₹ " + item.price);
-        h.image.setImageResource(item.image);
         h.qty.setText(String.valueOf(item.quantity));
+        h.image.setImageResource(item.image);
 
         h.plus.setOnClickListener(v -> {
             item.quantity++;
             pref.saveCartList(list);
             notifyDataSetChanged();
-            listener.onCartChanged();
+            updateTotal.run();
         });
 
         h.minus.setOnClickListener(v -> {
@@ -65,7 +60,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             }
             pref.saveCartList(list);
             notifyDataSetChanged();
-            listener.onCartChanged();
+            updateTotal.run();
         });
     }
 
@@ -77,18 +72,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView image;
-        TextView name, price, qty;
-        Button plus, minus;
+        TextView name, price, qty, plus, minus;
 
-        public ViewHolder(View itemView) {
-            super(itemView);
+        public ViewHolder(View v) {
+            super(v);
 
-            image = itemView.findViewById(R.id.imgCart);
-            name = itemView.findViewById(R.id.tvCartName);
-            price = itemView.findViewById(R.id.tvCartPrice);
-            qty = itemView.findViewById(R.id.tvQty);
-            plus = itemView.findViewById(R.id.btnPlus);
-            minus = itemView.findViewById(R.id.btnMinus);
+            image = v.findViewById(R.id.imgCart);
+            name = v.findViewById(R.id.tvCartName);
+            price = v.findViewById(R.id.tvCartPrice);
+            qty = v.findViewById(R.id.tvQty);
+            plus = v.findViewById(R.id.btnPlus);
+            minus = v.findViewById(R.id.btnMinus);
         }
     }
 }

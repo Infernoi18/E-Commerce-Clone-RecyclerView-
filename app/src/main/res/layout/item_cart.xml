@@ -3,9 +3,8 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="10dp"
-    android:layout_marginVertical="6dp"
-    card_view:cardCornerRadius="14dp"
+    android:layout_margin="12dp"
+    card_view:cardCornerRadius="16dp"
     card_view:cardElevation="6dp"
     card_view:cardBackgroundColor="@color/white">
 
@@ -13,19 +12,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="12dp">
+        android:padding="14dp"
+        android:gravity="center_vertical">
 
         <ImageView
             android:id="@+id/imgCart"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:scaleType="centerCrop" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="14dp"
             android:orientation="vertical">
 
             <TextView
@@ -42,40 +42,46 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:textColor="@color/gray"
-                android:layout_marginTop="4dp"/>
+                android:layout_marginTop="6dp"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="10dp"
-                android:background="@color/lightBeige"
-                android:padding="4dp">
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical">
 
-                <Button
+                <TextView
                     android:id="@+id/btnMinus"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
+                    android:gravity="center"
                     android:text="-"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
                     android:textColor="@color/white"
-                    android:backgroundTint="@color/primaryRed"/>
+                    android:background="@color/primaryRed"/>
 
                 <TextView
                     android:id="@+id/tvQty"
-                    android:layout_width="40dp"
-                    android:layout_height="36dp"
+                    android:layout_width="50dp"
+                    android:layout_height="48dp"
                     android:gravity="center"
                     android:text="1"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
 
-                <Button
+                <TextView
                     android:id="@+id/btnPlus"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
+                    android:gravity="center"
                     android:text="+"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
                     android:textColor="@color/white"
-                    android:backgroundTint="@color/primaryRed"/>
+                    android:background="@color/primaryRed"/>
 
             </LinearLayout>
 
