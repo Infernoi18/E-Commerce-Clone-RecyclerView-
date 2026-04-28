@@ -19,7 +19,7 @@
             android:layout_height="28dp"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:src="@android:drawable/ic_media_previous"
+            android:src="@android:drawable/ic_media_rew"
             android:tint="@color/white"/>
 
         <TextView
