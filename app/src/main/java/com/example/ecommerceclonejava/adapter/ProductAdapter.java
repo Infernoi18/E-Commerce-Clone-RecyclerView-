@@ -45,7 +45,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
         holder.name.setText(p.name);
         holder.desc.setText(p.desc);
-        holder.price.setText("₹ " + p.price);
+        holder.price.setText("Rs. " + p.price);
         holder.image.setImageResource(p.image);
 
         holder.itemView.setOnClickListener(v -> {

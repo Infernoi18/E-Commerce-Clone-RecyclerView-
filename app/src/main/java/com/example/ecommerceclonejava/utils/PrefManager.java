@@ -33,7 +33,6 @@ public class PrefManager {
                 password.equals(prefs.getString("password", ""));
     }
 
-    // 🔹 LOGIN STATE
     public void setLoggedIn(boolean value) {
         editor.putBoolean("isLoggedIn", value);
         editor.apply();
@@ -43,7 +42,7 @@ public class PrefManager {
         return prefs.getBoolean("isLoggedIn", false);
     }
 
-    // 🔹 SAVE CART (JSON)
+
     public void saveCartList(List<CartItem> list) {
         JSONArray array = new JSONArray();
 
@@ -64,7 +63,7 @@ public class PrefManager {
         editor.apply();
     }
 
-    // 🔹 GET CART
+
     public List<CartItem> getCartList() {
         List<CartItem> list = new ArrayList<>();
         String json = prefs.getString("cart_json", "");

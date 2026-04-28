@@ -36,21 +36,21 @@ public class HomeActivity extends AppCompatActivity {
 
         list.add(new Product(
                 "iPhone 14",
-                "79999",
+                "80000",
                 "Apple smartphone with A15 chip",
                 R.drawable.phone
         ));
 
         list.add(new Product(
                 "Dell Laptop",
-                "55999",
+                "70000",
                 "Intel i5, 16GB RAM, SSD",
                 R.drawable.laptop
         ));
 
         list.add(new Product(
                 "Running Shoes",
-                "2499",
+                "3000",
                 "Comfortable sports shoes",
                 R.drawable.shoes
         ));
