@@ -40,7 +40,7 @@ public class CartActivity extends AppCompatActivity {
         Button btncheck = findViewById(R.id.btnCheckout);
 
         btncheck.setOnClickListener(v ->
-                android.widget.Toast.makeText(this, "For Ordering Payment", android.widget.Toast.LENGTH_SHORT).show()
+                android.widget.Toast.makeText(this, "For Ordering, Proceed to Payment", android.widget.Toast.LENGTH_SHORT).show()
         );
         findViewById(R.id.backBtn).setOnClickListener(v -> finish());
         updateTotal();
