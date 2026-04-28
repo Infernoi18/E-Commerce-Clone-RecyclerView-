@@ -1,0 +1,12 @@
+<resources>
+    <color name="primaryRed">#C62828</color>
+    <color name="darkRed">#8E0000</color>
+    <color name="accentRed">#FF5252</color>
+
+    <color name="beige">#F5E9DA</color>
+    <color name="lightBeige">#FAF3E0</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#666666</color>
+</resources>
